@@ -1,0 +1,12 @@
+- name: install_hosts
+  hosts: database
+  gather_facts: true
+  become: true
+  roles:
+   - sql
+- name: db
+  hosts: app
+  gather_facts: true
+  become: true
+  roles:
+   - docker
